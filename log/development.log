@@ -1,0 +1,122 @@
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (74.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "widgets_development"[0m
+  [1m[35m (169.4ms)[0m  [1m[35mCREATE DATABASE "widgets_development" ENCODING = 'utf8'[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2880957698232373935)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-13 17:05:16.775877"], ["updated_at", "2020-12-13 17:05:16.775877"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(2880957698232373935)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 172.20.0.4 at 2020-12-13 17:05:31 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/dependencies-cache/bundler/ruby/2.7.0/gems/railties-6.1.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/dependencies-cache/bundler/ruby/2.7.0/gems/railties-6.1.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.4ms | Allocations: 439)
+Completed 200 OK in 37ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 3576)
+
+
+Started GET "/widgets/1234" for 172.20.0.4 at 2020-12-13 17:06:22 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WidgetsController#show as HTML
+  Parameters: {"id"=>"1234"}
+  Rendering layout layouts/application.html.erb
+  Rendering widgets/show.html.erb within layouts/application
+  Rendered widgets/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 237)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /root/widgets/public/packs
+[Webpacker] Hash: 415a948d492e21802f43
+Version: webpack 4.44.2
+Time: 2452ms
+Built at: 12/13/2020 5:06:27 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-d5a3c3b4dce84b5eb605.js    125 KiB  application  [emitted] [immutable]  application
+js/application-d5a3c3b4dce84b5eb605.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-d5a3c3b4dce84b5eb605.js js/application-d5a3c3b4dce84b5eb605.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 4204.6ms | Allocations: 12919)
+Completed 200 OK in 4217ms (Views: 4207.7ms | ActiveRecord: 0.0ms | Allocations: 15446)
+
+
+Started GET "/widgets" for 172.20.0.4 at 2020-12-13 17:06:49 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WidgetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering widgets/index.html.erb within layouts/application
+  Rendered widgets/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 368)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 5654)
+Completed 200 OK in 26ms (Views: 17.2ms | ActiveRecord: 0.0ms | Allocations: 8177)
+
+
+Started GET "/amazing" for 172.20.0.4 at 2020-12-13 17:06:55 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/widgets" for 172.20.0.4 at 2020-12-13 17:06:55 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by WidgetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering widgets/index.html.erb within layouts/application
+  Rendered widgets/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 359)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 5405)
+Completed 200 OK in 21ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 7927)
+
+
+Started GET "/widgets/1234" for 172.20.0.4 at 2020-12-13 17:07:26 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WidgetsController#show as HTML
+  Parameters: {"id"=>"1234"}
+  Rendering layout layouts/application.html.erb
+  Rendering widgets/show.html.erb within layouts/application
+  Rendered widgets/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1147)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 6539)
+Completed 200 OK in 33ms (Views: 22.7ms | ActiveRecord: 0.0ms | Allocations: 9068)
+
+
+Started GET "/widgets/1234" for 172.20.0.4 at 2020-12-13 17:07:34 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WidgetsController#show as HTML
+  Parameters: {"id"=>"1234"}
+  Rendering layout layouts/application.html.erb
+  Rendering widgets/show.html.erb within layouts/application
+  Rendered widgets/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1156)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 11195)
+Completed 200 OK in 34ms (Views: 26.6ms | ActiveRecord: 0.0ms | Allocations: 13722)
+
+
+Started GET "/widgets/12345" for 172.20.0.4 at 2020-12-13 17:08:06 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WidgetsController#show as HTML
+  Parameters: {"id"=>"12345"}
+  Rendering layout layouts/application.html.erb
+  Rendering widgets/show.html.erb within layouts/application
+  Rendered widgets/_rating.html.erb (Duration: 2.3ms | Allocations: 1004)
+  Rendered widgets/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1577)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 6966)
+Completed 200 OK in 28ms (Views: 19.5ms | ActiveRecord: 0.0ms | Allocations: 9517)
+
+
